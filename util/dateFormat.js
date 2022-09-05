@@ -59,4 +59,40 @@ module.exports = (
     }
 
     const dateObj = new Date(timestamp);
-}
+    //do a const for the month 
+    const monthForm = months[dateObj.getMonth()];
+
+    let dayOfMonth;
+
+    if (dateSuffix) {
+        dayOfMonth = addDateSuffix(dateObj.getDate())
+    } else {
+        dayOfMonth = dateObj.getDate();
+    }
+
+    const year = dateObj.getFullYear();
+
+    let hour;
+    // get the time in 24 hour day cycle 
+    if(dateObj.getHours > 12) {
+        hour = Math.floor(dateObj.getHours() / 2);
+    } else {
+        hour = dateObj.getHours();
+    }
+    //if the time says zero then change it to 12 for starting time 
+    if(hour === 0) {
+        hour = 12;
+    }
+    // last but not least get the minutes 
+    const minutes = dateObj.getMinutes();
+    // set the time to be either AM or PM
+    let timeofday;
+
+    if(dateObj.getHours() >= 12) {
+        timeofday = 'pm';
+    } else {
+        timeofday = 'am';
+    }
+
+    const timestampform = `${monthForm} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${timeofday}`;
+};
