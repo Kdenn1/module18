@@ -18,3 +18,10 @@ THEN the data for each of these routes is displayed in a formatted JSON
 THEN I am able to successfully create, update, and delete users and thoughts in my database
 - WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+
+# Goal
+The goal is to be able to demonstrate the functionality of the code through insomnia \
+via a video demonstration that will be linked HERE.
+
+## Credits
+This project was created and submitted by Kaeden Wodke. https://github.com/Kdenn1
